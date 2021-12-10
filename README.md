@@ -24,6 +24,9 @@ Page(proxyMini({
 2. 生命周期钩子基于原生小程序页面生命周期封装，对应关系如下表
 3. 支持$watch,$nextTick API
 4. 支持小程序全部配置项
+3. 更新方式：
+- 对象 使用路径赋值 如： this.obj.x = 1
+- 数组 使用路径赋值 如：this.arr[0] = 1 ， 数组支持 push, pop, unshift, shift, splice, sort, reverse 等更新方法， 如： this.arr.push(1)
 
 |  proxy-mini   | 小程序  | 说明
 |  ----  | ----  | ----  |
@@ -33,7 +36,7 @@ Page(proxyMini({
 | activated  | onShow | 页面开始显示
 | mounted  | onReady | 页面加载完成
 | deactivated  | onHide | 切入后台
-| destroyed  | onUnload | 切入后台
+| destroyed  | onUnload | 页面卸载
 
 *也可以直接使用小程序生命周期钩子, 会覆盖对应的vue生命周期钩子（如果同时声明）*
 
